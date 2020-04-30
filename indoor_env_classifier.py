@@ -14,28 +14,10 @@ from torch.autograd import Variable
 from torchvision import transforms
 #import matplotlib.pyplot as plt
 
-
-#from google.colab import drive                IF you are using COLAB
-
-
-# In[161]:
-
-
-# Use this if you are working on COLAB
-# This will prompt for authorization.
-#drive.mount('/content/drive')
-
-
-# In[162]:
-
-
 def extract_data(x_data_filepath, y_data_filepath):
     X = np.load(x_data_filepath)
     y = np.load(y_data_filepath)
     return X, y
-
-
-# In[294]:
 
 
 def data_visualization(images,labels):
@@ -193,11 +175,6 @@ class ConvolutionalNN(nn.Module):
         out = self.fc2(x)
         
         return out
-      
-    """ 
-        Please do not change the functions below. 
-        They will be used to test the correctness of your implementation
-    """
     
     def get_conv1_params(self):
         return self.conv1.__repr__()
@@ -216,10 +193,6 @@ class ConvolutionalNN(nn.Module):
     
     def get_fc2_params(self):
         return self.fc2.__repr__()
-
-
-# In[171]:
-
 
 def normalize_image(image):
     """
@@ -373,7 +346,6 @@ def test_NN(neural_network, test_loader):
                                                                 FeedForwardNN or ConvolutionalNN,
         test_loader (DataLoader), (make sure the loader is not shuffled)
     Returns:
-        your predictions         
     """
     
     Preds = torch.LongTensor()
